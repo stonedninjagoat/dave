@@ -1,1 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>This does something</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px auto;
+      max-width: 600px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    select, input[type="file"] {
+      margin-top: 5px;
+      padding: 5px;
+      width: 100%;
+    }
+    .tool-section {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <h1>This does something</h1>
+
+  <label for="midiUpload">Upload MIDI File(s):</label>
+  <input type="file" id="midiUpload" accept=".mid,.midi" multiple />
+
+  <label for="algorithmSelect">Select Algorithm:</label>
+  <select id="algorithmSelect">
+    <option value="">-- Choose an algorithm --</option>
+    <option value="ngrams">n-grams</option>
+  </select>
+
+  <div id="ngramsTool" class="tool-section">
+    <h2>n-grams Tool</h2>
+    <p>This is where the n-grams tool interface will go.</p>
+    <!-- Add inputs, buttons, or logic related to the n-gram tool here -->
+  </div>
+
+  <script>
+    const algorithmSelect = document.getElementById('algorithmSelect');
+    const ngramsTool = document.getElementById('ngramsTool');
+
+    algorithmSelect.addEventListener('change', function () {
+      const selected = algorithmSelect.value;
+      ngramsTool.style.display = selected === 'ngrams' ? 'block' : 'none';
+    });
+  </script>
+</body>
+</html>
 
